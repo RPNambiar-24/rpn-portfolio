@@ -508,41 +508,49 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="section__head reveal">
-        <h2>Contact</h2>
-        <p>If you’re hiring for ML/DS internships or want to collaborate, I’d love to connect.</p>
-      </div>
-
-      <div class="contact reveal">
-        <div class="card">
-          <h3>Quick Links</h3>
-          <div class="linklist">
-            <a href="mailto:rishabpnambiar@google.com">rishabpnambiar@google.com</a>
-            <a href="https://www.linkedin.com/in/rishab-p-nambiar/" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://github.com/RPNambiar-24" target="_blank" rel="noopener">GitHub</a>
-          </div>
-
-        <form class="card form" onsubmit="return handleContact(event)">
-          <h3>Send a message</h3>
-          <label>
-            Name
-            <input required name="name" placeholder="Your name" />
-          </label>
-          <label>
-            Email
-            <input required type="email" name="email" placeholder="your@email.com" />
-          </label>
-          <label>
-            Message
-            <textarea required name="message" rows="5" placeholder="Tell me about the opportunity..."></textarea>
-          </label>
-          <button class="btn" type="submit">Send</button>
-        </form>
-      </div>
+<section id="contact" class="section">
+  <div class="container">
+    <div class="section__head reveal">
+      <h2>Contact</h2>
+      <p>If you’re hiring for ML/DS internships or want to collaborate, I’d love to connect.</p>
     </div>
-  </section>
+
+    <div class="contact reveal">
+      <!-- Left: Quick links -->
+      <div class="card">
+        <h3>Quick Links</h3>
+        <div class="linklist">
+          <a href="mailto:rishabpnambiar@google.com">rishabpnambiar@google.com</a>
+          <a href="https://www.linkedin.com/in/rishab-p-nambiar/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/RPNambiar-24" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <!-- Right: Message form -->
+      <form class="card form" onsubmit="return handleContact(event)">
+        <h3>Send a message</h3>
+
+        <label>
+          Name
+          <input required name="name" placeholder="Your name" />
+        </label>
+
+        <label>
+          Email
+          <input required type="email" name="email" placeholder="your@email.com" />
+        </label>
+
+        <label>
+          Message
+          <textarea required name="message" rows="5" placeholder="Tell me about the opportunity..."></textarea>
+        </label>
+
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</section>
+
 
   <footer class="footer">
     <div class="container footer__inner">
@@ -554,6 +562,7 @@
   <script src="./script.js"></script>
 </body>
 </html>
+
 
 
 
