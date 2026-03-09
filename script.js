@@ -4,7 +4,8 @@ const outline = document.getElementById("cursorOutline");
 let mouseX = 0, mouseY = 0, outX = 0, outY = 0;
 
 document.addEventListener("mousemove", e => {
-  mouseX = e.clientX; mouseY = e.clientY;
+  mouseX = e.clientX;
+  mouseY = e.clientY;
   dot.style.left = mouseX + "px";
   dot.style.top = mouseY + "px";
 });
@@ -18,16 +19,22 @@ function animateOutline() {
 }
 animateOutline();
 
-document.querySelectorAll("a, button, .project-card, .skill-category, .ach-card").forEach(el => {
+// Show cursor on page load immediately
+dot.style.opacity = "1";
+outline.style.opacity = "1";
+
+document.querySelectorAll("a, button, .project-card, .skill-category, .ach-card, .contact-item").forEach(el => {
   el.addEventListener("mouseenter", () => {
     outline.style.width = "56px";
     outline.style.height = "56px";
     outline.style.borderColor = "rgba(99,102,241,0.9)";
+    dot.style.transform = "translate(-50%,-50%) scale(1.5)";
   });
   el.addEventListener("mouseleave", () => {
     outline.style.width = "36px";
     outline.style.height = "36px";
     outline.style.borderColor = "rgba(99,102,241,0.6)";
+    dot.style.transform = "translate(-50%,-50%) scale(1)";
   });
 });
 
@@ -102,7 +109,7 @@ function typeLoop() {
 typeLoop();
 
 // Scroll Reveal
-const revealEls = document.querySelectorAll(".section, .project-card, .skill-category, .ach-card, .stat-card, .timeline-item");
+const revealEls = document.querySelectorAll(".section, .project-card, .skill-category, .ach-card, .stat-card, .timeline-item, .contact-item");
 revealEls.forEach(el => el.classList.add("reveal"));
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
