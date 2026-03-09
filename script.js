@@ -47,13 +47,13 @@ for (let i = 0; i < 35; i++) {
   bg.appendChild(p);
 }
 
-// Navbar scroll effect
+// Navbar scroll
 const navbar = document.getElementById("navbar");
 window.addEventListener("scroll", () => {
   navbar.classList.toggle("scrolled", window.scrollY > 50);
 });
 
-// Hamburger menu
+// Hamburger
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 hamburger.addEventListener("click", () => {
@@ -63,7 +63,7 @@ navLinks.querySelectorAll(".nav-link").forEach(l => {
   l.addEventListener("click", () => navLinks.classList.remove("open"));
 });
 
-// Typewriter effect
+// Typewriter
 const words = [
   "end-to-end AI systems.",
   "Computer Vision models.",
@@ -132,7 +132,7 @@ filterBtns.forEach(btn => {
   });
 });
 
-// Active nav link highlight on scroll
+// Active nav highlight on scroll
 const sections = document.querySelectorAll("section[id]");
 window.addEventListener("scroll", () => {
   const y = window.scrollY + 100;
@@ -145,17 +145,4 @@ window.addEventListener("scroll", () => {
       link.style.color = "";
     }
   });
-});
-
-// Contact form submit
-document.getElementById("contactForm").addEventListener("submit", e => {
-  e.preventDefault();
-  const btn = e.target.querySelector("button");
-  btn.textContent = "Sent! ✅";
-  btn.style.background = "linear-gradient(135deg,#22c55e,#16a34a)";
-  setTimeout(() => {
-    btn.textContent = "Send Message ✉️";
-    btn.style.background = "";
-    e.target.reset();
-  }, 3000);
 });
