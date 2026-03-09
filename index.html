@@ -1,576 +1,397 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Rishab Premod Nambiar — Data Science & ML portfolio. NLP, Transformers, Computer Vision, GANs, RL, Forecasting.">
-  <meta name="keywords" content="Rishab Nambiar, Data Science, Machine Learning, Deep Learning, NLP, Transformers, PyTorch, XGBoost, Computer Vision, GAN, Reinforcement Learning">
-  <meta name="author" content="Rishab Premod Nambiar" />
-
-  <!-- OpenGraph -->
-  <meta property="og:title" content="Rishab Premod Nambiar | Data Science Portfolio" />
-  <meta property="og:description" content="NLP • CV • Forecasting • RL — Projects: DetectAI (98.64% accuracy), Pix2Pix GAN colorization, DQN traffic control, YOLOv4 wildlife protection." />
-  <meta property="og:type" content="website" />
-
-  <title>Rishab P Nambiar | Data Science Portfolio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="./style.css" />
-  <link rel="icon" type="image/png" href="./assets/favicon.png">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rishab P Nambiar | AI & Data Science Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="assets/favicon.png" type="image/png"/>
 </head>
-
 <body>
-  <!-- Top Progress Bar -->
-  <div class="progress" id="progress"></div>
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-outline" id="cursorOutline"></div>
 
-  <!-- Navbar -->
-  <header class="nav">
-    <div class="container nav__inner">
-      <a class="brand" href="#top" aria-label="Go to top">
-        <span class="brand__dot"></span>
-        <span class="brand__name">Rishab P Nambiar</span>
-      </a>
+  <!-- Particles Background -->
+  <div id="particles-bg"></div>
 
-      <nav class="nav__links" aria-label="Primary Navigation">
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact" class="pill">Contact</a>
-      </nav>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">RPN<span class="accent">.</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#achievements" class="nav-link">Achievements</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="assets/resume.pdf" download class="btn-resume">Resume <span>↓</span></a>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
 
-      <div class="nav__actions">
-        <button class="iconbtn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
-          <span id="themeIcon">🌙</span>
-        </button>
-        <button class="hamburger" id="hamburger" aria-label="Open menu">
-          <span></span><span></span><span></span>
-        </button>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, World! I'm</p>
+      <h1 class="hero-name">
+        <span class="glitch" data-text="Rishab">Rishab</span>
+        <span class="glitch accent-name" data-text="Nambiar">Nambiar</span>
+      </h1>
+      <div class="hero-typewriter">
+        <span class="typewriter-prefix">I build </span>
+        <span class="typewriter-text" id="typewriter"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+      <p class="hero-sub">ML-focused Data Science student crafting end-to-end AI systems across NLP, Computer Vision &amp; Reinforcement Learning.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">Explore My Work</a>
+        <a href="#contact" class="btn-ghost">Get In Touch</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/RPNambiar-24" target="_blank" class="social-link" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/rishab-p-nambiar" target="_blank" class="social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:rishabpnambiar@gmail.com" class="social-link" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.910 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+        </a>
       </div>
     </div>
-
-    <!-- Mobile menu -->
-    <div class="mobile" id="mobileMenu">
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#contact" class="pill">Contact</a>
-      <a href="assets/resume.pdf" target="_blank" rel="noopener" class="pill pill--ghost">Download Resume</a>
+    <div class="hero-visual">
+      <div class="profile-frame">
+        <img src="assets/profile.jpg" alt="Rishab P Nambiar" class="profile-img"/>
+        <div class="profile-ring ring1"></div>
+        <div class="profile-ring ring2"></div>
+        <div class="profile-badge badge1">
+          <span class="badge-num">8.99</span>
+          <span class="badge-label">GPA / 10</span>
+        </div>
+        <div class="profile-badge badge2">
+          <span class="badge-num">99.57%</span>
+          <span class="badge-label">Best Model</span>
+        </div>
+      </div>
     </div>
-  </header>
-
-  <!-- Hero -->
-  <main id="top" class="hero">
-    <div class="container hero__grid">
-      <section class="hero__content reveal">
-        <p class="kicker">Integrated MSc Data Science • Amrita Vishwa Vidyapeetham</p>
-
-        <h1>
-          Building <span class="grad">AI systems</span> that turn into decisions.
-        </h1>
-
-        <p class="sub">
-          Projects across <b>NLP</b>, <b>Computer Vision</b>, <b>Forecasting</b> and <b>Reinforcement Learning</b> —
-          from training and evaluation to explainability and deployment.
-        </p>
-
-
-        <div class="proof">
-          <div class="proof__item">
-            <span class="proof__big">98.64%</span>
-            <span class="proof__small">DetectAI accuracy</span>
-          </div>
-          <div class="proof__item">
-            <span class="proof__big">ICAISC 2025</span>
-            <span class="proof__small">Conference paper</span>
-          </div>
-          <div class="proof__item">
-            <span class="proof__big">Hackathon</span>
-            <span class="proof__small">Winner</span>
-          </div>
-        </div>
-
-        <div class="cta">
-          <a class="btn" href="#projects">View Projects</a>
-          <a class="btn btn--ghost" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
-        </div>
-
-        <div class="social">
-          <a href="https://www.linkedin.com/in/rishab-p-nambiar/" target="_blank" rel="noopener">LinkedIn</a>
-          <span class="dot">•</span>
-          <a href="https://github.com/RPNambiar-24" target="_blank" rel="noopener">GitHub</a>
-          <span class="dot">•</span>
-          <a href="mailto:rishabpnambiar@google.com">Email</a>
-        </div>
-      </section>
-
-      <aside class="hero__card reveal">
-        <div class="profile">
-          <img src="assets/profile.jpg" alt="Rishab P Nambiar" class="avatar-img">
-          <div>
-            <div class="profile__name">Rishab Premod Nambiar</div>
-            <div class="profile__role">Aspiring Data Scientist • ML Engineer (Intern)</div>
-          </div>
-        </div>
-
-        <div class="mini">
-          <div class="mini__row">
-            <span class="mini__label">Current focus</span>
-            <span class="mini__value">Transformers • RL • CV</span>
-          </div>
-          <div class="mini__row">
-            <span class="mini__label">Tooling</span>
-            <span class="mini__value">PyTorch • XGBoost • CUDA</span>
-          </div>
-          <div class="mini__row">
-            <span class="mini__label">Deployment</span>
-            <span class="mini__value">Gradio • Streamlit</span>
-          </div>
-        </div>
-
-        <div class="tags">
-          <span class="tag">NLP</span>
-          <span class="tag">Computer Vision</span>
-          <span class="tag">Forecasting</span>
-          <span class="tag">Reinforcement Learning</span>
-          <span class="tag">Explainable AI</span>
-        </div>
-      </aside>
-    </div>
-  </main>
-
-  <!-- Projects -->
-  <section id="projects" class="section">
-    <div class="container">
-      <div class="section__head reveal">
-        <h2>Projects</h2>
-        <p>Selected work based on my latest CV (Jan 2026). Filter by domain.</p>
-      </div>
-
-      <div class="filters reveal" role="tablist" aria-label="Project filters">
-        <button class="chip active" data-filter="all">All</button>
-        <button class="chip" data-filter="nlp">NLP</button>
-        <button class="chip" data-filter="cv">Computer Vision</button>
-        <button class="chip" data-filter="rl">Reinforcement Learning</button>
-        <button class="chip" data-filter="forecast">Forecasting</button>
-        <button class="chip" data-filter="systems">Systems</button>
-      </div>
-
-      <div class="grid projects" id="projectGrid">
-        <!-- DetectAI -->
-        <article class="card project reveal" data-tags="nlp systems">
-          <div class="card__top">
-            <div>
-              <h3>DetectAI: Human vs AI-Generated Text Classifier</h3>
-              <p class="muted">
-                Hybrid ensemble + fine-tuned RoBERTa with explainability and web deployment.
-              </p>
-            </div>
-            <span class="badge">NLP</span>
-          </div>
-
-          <ul class="bullets">
-            <li><b>98.64% accuracy</b> using TF-IDF + Random Forest + BiLSTM + fine-tuned RoBERTa.</li>
-            <li>Integrated <b>SHAP + LIME</b> for interpretable predictions.</li>
-            <li>Deployed an interactive demo using <b>Gradio</b>.</li>
-          </ul>
-
-          <div class="metrics">
-            <span class="metric">Accuracy: 98.64%</span>
-            <span class="metric">XAI: SHAP/LIME</span>
-            <span class="metric">Deploy: Gradio</span>
-          </div>
-
-          <div class="actions">
-            <a class="btn btn--small" href="https://github.com/RPNambiar-24" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn btn--small btn--ghost" href="#contact">Request Demo</a>
-          </div>
-        </article>
-
-        <!-- Illegal Fence Detection -->
-        <article class="card project reveal" data-tags="cv systems">
-          <div class="card__top">
-            <div>
-              <h3>Illegal Fence Detection (AI Drone) — Wildlife Conservation</h3>
-              <p class="muted">
-                YOLOv4 + onboard voltmeter to identify illegal electric fences & unsafe voltage in real time.
-              </p>
-            </div>
-            <span class="badge">CV</span>
-          </div>
-
-          <ul class="bullets">
-            <li>Built detection pipeline using <b>YOLOv4 (Darknet)</b> for fence identification.</li>
-            <li>Monitored unsafe voltage levels to prevent wildlife electrocution.</li>
-            <li>Presented at <b>ICAISC-2025</b> conference.</li>
-          </ul>
-
-          <div class="metrics">
-            <span class="metric">Model: YOLOv4</span>
-            <span class="metric">Domain: Conservation AI</span>
-            <span class="metric">Output: Paper</span>
-          </div>
-
-          <div class="actions">
-            <a class="btn btn--small" href="#contact">Paper Link</a>
-            <a class="btn btn--small btn--ghost" href="https://www.linkedin.com/in/rishab-p-nambiar/" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </article>
-
-        <!-- Forecasting -->
-        <article class="card project reveal" data-tags="forecast systems">
-          <div class="card__top">
-            <div>
-              <h3>Predictive Demand Modeling (Logistics Forecasting)</h3>
-              <p class="muted">
-                Time-series forecasting for grocery sales using engineered features + XGBoost optimization.
-              </p>
-            </div>
-            <span class="badge">Forecasting</span>
-          </div>
-
-          <ul class="bullets">
-            <li>Performed data preparation, <b>EDA</b>, feature engineering and tuning.</li>
-            <li>Trained <b>XGBoost</b> for stable and accurate sales forecasting.</li>
-            <li><b>Won</b> SMILe Logistics Innovation Hack (team).</li>
-          </ul>
-
-          <div class="metrics">
-            <span class="metric">Model: XGBoost</span>
-            <span class="metric">Task: Time Series</span>
-            <span class="metric">Award: Hackathon winner</span>
-          </div>
-
-          <div class="actions">
-            <a class="btn btn--small" href="https://github.com/RPNambiar-24" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn btn--small btn--ghost" href="#contact">Ask for report</a>
-          </div>
-        </article>
-
-        <!-- GAN Colorization -->
-        <article class="card project reveal" data-tags="cv">
-          <div class="card__top">
-            <div>
-              <h3>Image Colorization using GANs (Pix2Pix)</h3>
-              <p class="muted">
-                Built an end-to-end GAN pipeline to colorize grayscale images with strong perceptual quality.
-              </p>
-            </div>
-            <span class="badge">CV</span>
-          </div>
-
-          <ul class="bullets">
-            <li>Trained a <b>Pix2Pix GAN</b> (Generator–Discriminator) for colorization.</li>
-            <li>Achieved <b>PSNR: 24.56</b> and <b>SSIM: 0.899</b>.</li>
-            <li>Designed preprocessing + evaluation for reproducible results.</li>
-          </ul>
-
-          <div class="metrics">
-            <span class="metric">PSNR: 24.56</span>
-            <span class="metric">SSIM: 0.899</span>
-            <span class="metric">Arch: Pix2Pix</span>
-          </div>
-
-          <div class="actions">
-            <a class="btn btn--small" href="https://github.com/RPNambiar-24" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn btn--small btn--ghost" href="#contact">Demo</a>
-          </div>
-        </article>
-
-        <!-- RL Traffic -->
-        <article class="card project reveal" data-tags="rl systems">
-          <div class="card__top">
-            <div>
-              <h3>Adaptive Traffic Signal Controller (Deep Q-Learning)</h3>
-              <p class="muted">
-                RL-based controller for a simulated 2-way intersection to reduce congestion vs fixed-time control.
-              </p>
-            </div>
-            <span class="badge">RL</span>
-          </div>
-
-          <ul class="bullets">
-            <li>Built a <b>DQN agent</b> to learn optimal signal switching policy.</li>
-            <li>Improved throughput and reduced average waiting time over static timings.</li>
-            <li>Simulation + visualization using <b>PyGame</b>.</li>
-          </ul>
-
-          <div class="metrics">
-            <span class="metric">Algo: DQN</span>
-            <span class="metric">Sim: 2-way intersection</span>
-            <span class="metric">Tool: PyGame</span>
-          </div>
-
-          <div class="actions">
-            <a class="btn btn--small" href="https://github.com/RPNambiar-24" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn btn--small btn--ghost" href="#contact">Video</a>
-          </div>
-        </article>
-
-        <!-- Ongoing -->
-        <article class="card project reveal" data-tags="systems nlp">
-          <div class="card__top">
-            <div>
-              <h3>Ongoing: MockViewAI</h3>
-              <p class="muted">
-                Resume + job description driven mock interview system with speech-to-text and scoring.
-              </p>
-            </div>
-            <span class="badge badge--ghost">Ongoing</span>
-          </div>
-
-          <ul class="bullets">
-            <li>Generates interview questions from resume + JD and evaluates answers.</li>
-            <li>Uses <b>Whisper</b> for speech recognition and <b>Flask + PostgreSQL</b> backend.</li>
-          </ul>
-
-          <div class="metrics">
-            <span class="metric">Whisper</span>
-            <span class="metric">Flask</span>
-            <span class="metric">PostgreSQL</span>
-          </div>
-
-          <div class="actions">
-            <a class="btn btn--small btn--ghost" href="#contact">Collaborate</a>
-          </div>
-        </article>
-
-        <article class="card project reveal" data-tags="systems">
-          <div class="card__top">
-            <div>
-              <h3>Ongoing: Malware Classifier using Zero-Shot Learning</h3>
-              <p class="muted">
-                Robust malware family classification with ZSL across MaleVis and MalImg datasets.
-              </p>
-            </div>
-            <span class="badge badge--ghost">Ongoing</span>
-          </div>
-
-          <ul class="bullets">
-            <li>Developing a <b>Zero-Shot Learning</b> pipeline for unseen malware families.</li>
-            <li>Training in <b>PyTorch</b> on MaleVis + MalImg datasets.</li>
-          </ul>
-
-          <div class="metrics">
-            <span class="metric">ZSL</span>
-            <span class="metric">PyTorch</span>
-            <span class="metric">MaleVis/MalImg</span>
-          </div>
-
-          <div class="actions">
-            <a class="btn btn--small btn--ghost" href="#contact">Discuss</a>
-          </div>
-        </article>
-
-      </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="section section--alt">
+  <!-- About Section -->
+  <section class="about section" id="about">
     <div class="container">
-      <div class="section__head reveal">
-        <h2>Skills</h2>
-        <p>Tools and domains I actively use in projects and coursework.</p>
-      </div>
-
-      <div class="skills reveal">
-        <div class="skillbox">
-          <h4>Programming</h4>
-          <div class="pillgrid">
-            <span class="pilltag">Python</span>
-            <span class="pilltag">R</span>
-            <span class="pilltag">SQL</span>
-            <span class="pilltag">MATLAB</span>
+      <div class="section-tag">About Me</div>
+      <h2 class="section-title">Who I Am</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm a 4th-year Integrated MSc Data Science student at <strong>Amrita Vishwa Vidyapeetham</strong>, passionate about building intelligent systems that solve real-world problems.</p>
+          <p>My work spans across <strong>NLP, Computer Vision, Reinforcement Learning</strong>, and <strong>Explainable AI</strong> — from published research papers to hackathon wins.</p>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-num">8</span><span class="stat-plus">+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">1</span>
+              <span class="stat-label">Publication</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">1</span>
+              <span class="stat-label">Hackathon Win</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">8.99</span>
+              <span class="stat-label">GPA</span>
+            </div>
           </div>
         </div>
-
-        <div class="skillbox">
-          <h4>ML / DL</h4>
-          <div class="pillgrid">
-            <span class="pilltag">PyTorch</span>
-            <span class="pilltag">scikit-learn</span>
-            <span class="pilltag">XGBoost</span>
-            <span class="pilltag">Transformers</span>
-            <span class="pilltag">NLP</span>
-            <span class="pilltag">Computer Vision</span>
-            <span class="pilltag">Reinforcement Learning</span>
-            <span class="pilltag">CUDA</span>
-          </div>
-        </div>
-
-        <div class="skillbox">
-          <h4>Data</h4>
-          <div class="pillgrid">
-            <span class="pilltag">NumPy</span>
-            <span class="pilltag">Pandas</span>
-            <span class="pilltag">SciPy</span>
-            <span class="pilltag">EDA</span>
-            <span class="pilltag">Feature Engineering</span>
-          </div>
-        </div>
-
-        <div class="skillbox">
-          <h4>Visualization</h4>
-          <div class="pillgrid">
-            <span class="pilltag">Matplotlib</span>
-            <span class="pilltag">Seaborn</span>
-            <span class="pilltag">Plotly</span>
-            <span class="pilltag">Tableau</span>
-          </div>
-        </div>
-
-        <div class="skillbox">
-          <h4>Deployment</h4>
-          <div class="pillgrid">
-            <span class="pilltag">Gradio</span>
-            <span class="pilltag">Streamlit</span>
-            <span class="pilltag">Flask</span>
-            <span class="pilltag">PostgreSQL</span>
+        <div class="about-edu">
+          <h3>Education</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Integrated MSc Data Science</h4>
+                <p class="timeline-org">Amrita Vishwa Vidyapeetham, Coimbatore</p>
+                <p class="timeline-meta">2022 – Present &nbsp;|&nbsp; GPA: 8.99/10</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>AISSCE (Class XII)</h4>
+                <p class="timeline-org">Kendriya Vidyalaya No. 1, Calicut</p>
+                <p class="timeline-meta">2020–21 &nbsp;|&nbsp; 95.2% — PCM &amp; Biology</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Education -->
-  <section id="education" class="section">
+  <!-- Skills Section -->
+  <section class="skills section" id="skills">
     <div class="container">
-      <div class="section__head reveal">
-        <h2>Education</h2>
-      </div>
-
-      <div class="timeline reveal">
-        <div class="titem">
-          <div class="tmark"></div>
-          <div class="tcontent">
-            <h4>Amrita Vishwa Vidyapeetham, Coimbatore</h4>
-            <p class="muted">Integrated MSc Data Science (Sept 2022 – Present)</p>
-            <p><b>GPA:</b> 8.99/10</p>
-            <p class="muted">
-              Coursework: Deep Learning, Machine Learning, Data Visualization, Statistics, DBMS, Data Wrangling, Image Processing.
-            </p>
+      <div class="section-tag">Technical Expertise</div>
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-cat-icon">🧠</div>
+          <h3>ML / DL & AI</h3>
+          <div class="skill-tags">
+            <span class="tag">PyTorch</span><span class="tag">Scikit-learn</span>
+            <span class="tag">XGBoost</span><span class="tag">Transformers</span>
+            <span class="tag">CNNs</span><span class="tag">GANs</span>
+            <span class="tag">DQN</span><span class="tag">NLP</span>
+            <span class="tag">Computer Vision</span><span class="tag">SHAP</span>
+            <span class="tag">LIME</span><span class="tag">Grad-CAM</span>
           </div>
         </div>
-
-        <div class="titem">
-          <div class="tmark"></div>
-          <div class="tcontent">
-            <h4>Kendriya Vidyalaya No.1, Calicut</h4>
-            <p class="muted">AISSCE (2020–21)</p>
-            <p><b>Marks:</b> 95.2</p>
-            <p class="muted">Subjects: Physics, Chemistry, Maths, Biology</p>
+        <div class="skill-category">
+          <div class="skill-cat-icon">💻</div>
+          <h3>Programming</h3>
+          <div class="skill-tags">
+            <span class="tag">Python</span><span class="tag">R</span>
+            <span class="tag">SQL</span><span class="tag">MATLAB</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-icon">📊</div>
+          <h3>Data & Visualization</h3>
+          <div class="skill-tags">
+            <span class="tag">NumPy</span><span class="tag">Pandas</span>
+            <span class="tag">SciPy</span><span class="tag">Matplotlib</span>
+            <span class="tag">Plotly</span><span class="tag">Tableau</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-icon">🚀</div>
+          <h3>Deployment</h3>
+          <div class="skill-tags">
+            <span class="tag">Streamlit</span><span class="tag">Gradio</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Achievements -->
-  <section id="achievements" class="section section--alt">
+  <!-- Projects Section -->
+  <section class="projects section" id="projects">
     <div class="container">
-      <div class="section__head reveal">
-        <h2>Achievements & Activities</h2>
-        <p>A mix of technical and extracurricular highlights.</p>
+      <div class="section-tag">Portfolio</div>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="nlp">NLP</button>
+        <button class="filter-btn" data-filter="cv">Computer Vision</button>
+        <button class="filter-btn" data-filter="rl">Reinforcement Learning</button>
+        <button class="filter-btn" data-filter="research">Research</button>
       </div>
+      <div class="projects-grid" id="projectsGrid">
 
-      <div class="grid two reveal">
-        <div class="card">
-          <h3>Achievements</h3>
-          <ul class="bullets bullets--tight">
-            <li>Winner — <b>SMILe Logistics Innovation Hack</b> (team)</li>
-            <li>Conference paper presented — <b>ICAISC-2025</b></li>
-          </ul>
+        <div class="project-card" data-category="nlp">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <div class="project-icon">🔍</div>
+            <div class="project-badges">
+              <span class="badge-tag nlp">NLP</span>
+              <span class="badge-tag highlight">98.64% Acc</span>
+            </div>
+          </div>
+          <h3>DetectAI</h3>
+          <p class="project-sub">Human vs AI-Generated Text Classifier</p>
+          <p class="project-desc">Hybrid detection system combining TF-IDF + Random Forest + BiLSTM with fine-tuned RoBERTa transformer. Integrated SHAP and LIME for word-level interpretability, deployed via Gradio.</p>
+          <div class="project-stack"><span>RoBERTa</span><span>BiLSTM</span><span>SHAP</span><span>LIME</span><span>Gradio</span></div>
         </div>
 
-        <div class="card">
-          <h3>Extracurricular</h3>
-          <ul class="bullets bullets--tight">
-            <li>Technical team — <b>Ideathon ’24</b> (Anokha Tech Fest)</li>
-            <li>5th prize — Group song (Indian), 38th AIU South Zone Youth Festival</li>
-            <li>4th prize — Group song (Indian), 39th AIU South Zone Youth Festival</li>
-          </ul>
+        <div class="project-card" data-category="cv">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <div class="project-icon">🎨</div>
+            <div class="project-badges">
+              <span class="badge-tag cv">Computer Vision</span>
+              <span class="badge-tag highlight">PSNR: 24.56</span>
+            </div>
+          </div>
+          <h3>Image Colorization</h3>
+          <p class="project-sub">Using Generative Adversarial Networks</p>
+          <p class="project-desc">End-to-end Pix2Pix GAN pipeline converting grayscale images to realistic color outputs achieving PSNR of 24.56 and SSIM of 0.899 with metric-based comparison workflows.</p>
+          <div class="project-stack"><span>Pix2Pix</span><span>GANs</span><span>PyTorch</span><span>SSIM</span></div>
         </div>
-      </div>
 
-      <div class="card reveal">
-        <h3>Certifications</h3>
-        <p class="muted">Simple certifications (more advanced ones in progress).</p>
-        <ul class="bullets bullets--tight">
-          <li>Python (Basic) — HackerRank</li>
-          <li>Problem Solving (Basic) — HackerRank</li>
-        </ul>
+        <div class="project-card" data-category="rl">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <div class="project-icon">🚦</div>
+            <div class="project-badges">
+              <span class="badge-tag rl">RL</span>
+              <span class="badge-tag highlight">~10% Congestion ↓</span>
+            </div>
+          </div>
+          <h3>Adaptive Traffic Controller</h3>
+          <p class="project-sub">Reinforcement Learning Agent</p>
+          <p class="project-desc">Deep Q-Network (DQN) agent learning optimal traffic signal phase-switching, reducing congestion ~10% vs fixed-time baseline with PyGame simulation environment.</p>
+          <div class="project-stack"><span>DQN</span><span>PyGame</span><span>PyTorch</span><span>RL</span></div>
+        </div>
+
+        <div class="project-card" data-category="nlp">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <div class="project-icon">🎙️</div>
+            <div class="project-badges">
+              <span class="badge-tag nlp">NLP</span>
+              <span class="badge-tag wip">In Progress</span>
+            </div>
+          </div>
+          <h3>MockViewAI</h3>
+          <p class="project-sub">AI-Powered Mock Interview System</p>
+          <p class="project-desc">Generates role-specific interview questions from resumes and JDs, implements automated response scoring with structured AI-driven feedback for interview prep.</p>
+          <div class="project-stack"><span>LLM</span><span>NLP</span><span>Python</span></div>
+        </div>
+
+        <div class="project-card featured" data-category="research cv">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <div class="project-icon">🦠</div>
+            <div class="project-badges">
+              <span class="badge-tag research">Research</span>
+              <span class="badge-tag highlight">99.57% Acc</span>
+            </div>
+          </div>
+          <h3>Trimodal Malware Classifier</h3>
+          <p class="project-sub">CNN + GNN + Semantic Fusion</p>
+          <p class="project-desc">Attention-based trimodal fusion of visual, structural, and semantic features for malware image classification achieving 99.57% accuracy with CNN, GNN, and semantic attributes.</p>
+          <div class="project-stack"><span>CNN</span><span>GNN</span><span>Attention</span><span>PyTorch</span></div>
+        </div>
+
+        <div class="project-card" data-category="research">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <div class="project-icon">🏆</div>
+            <div class="project-badges">
+              <span class="badge-tag highlight">Hackathon Winner</span>
+            </div>
+          </div>
+          <h3>Predictive Demand Modeling</h3>
+          <p class="project-sub">Logistics Industry · SMILe Hack Winner</p>
+          <p class="project-desc">Time-series forecasting pipeline using XGBoost with engineered temporal features to predict grocery sales. Won SMILe Logistics Innovation Hackathon.</p>
+          <div class="project-stack"><span>XGBoost</span><span>Time-Series</span><span>Pandas</span></div>
+        </div>
+
+        <div class="project-card" data-category="research cv">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <div class="project-icon">🦅</div>
+            <div class="project-badges">
+              <span class="badge-tag research">Published</span>
+              <span class="badge-tag highlight">ICAISC-2025</span>
+            </div>
+          </div>
+          <h3>Illegal Fence Detection</h3>
+          <p class="project-sub">Wildlife Conservation · YOLOv4</p>
+          <p class="project-desc">Drone-based AI system using YOLOv4 to detect illegal electric fences threatening wildlife. Paper presented and published at ICAISC-2025.</p>
+          <div class="project-stack"><span>YOLOv4</span><span>Drone AI</span><span>OpenCV</span></div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-<section id="contact" class="section">
-  <div class="container">
-    <div class="section__head reveal">
-      <h2>Contact</h2>
-      <p>If you’re hiring for ML/DS internships or want to collaborate, I’d love to connect.</p>
-    </div>
-
-    <div class="contact reveal">
-      <!-- Left: Quick links -->
-      <div class="card">
-        <h3>Quick Links</h3>
-        <div class="linklist">
-          <a href="mailto:rishabpnambiar@google.com">rishabpnambiar@google.com</a>
-          <a href="https://www.linkedin.com/in/rishab-p-nambiar/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com/RPNambiar-24" target="_blank" rel="noopener">GitHub</a>
+  <!-- Achievements Section -->
+  <section class="achievements section" id="achievements">
+    <div class="container">
+      <div class="section-tag">Recognition</div>
+      <h2 class="section-title">Achievements</h2>
+      <div class="ach-grid">
+        <div class="ach-card">
+          <div class="ach-icon">🏅</div>
+          <h3>Hackathon Winner</h3>
+          <p>SMILe Logistics Innovation Hack — XGBoost Demand Forecasting</p>
+        </div>
+        <div class="ach-card">
+          <div class="ach-icon">📄</div>
+          <h3>Research Publication</h3>
+          <p>Illegal Fence Detection for Wildlife Conservation — ICAISC 2025</p>
+        </div>
+        <div class="ach-card">
+          <div class="ach-icon">✅</div>
+          <h3>HackerRank Certified</h3>
+          <p>Python &amp; Problem Solving certifications from HackerRank</p>
+        </div>
+        <div class="ach-card">
+          <div class="ach-icon">🎵</div>
+          <h3>AIU Youth Festival</h3>
+          <p>4th &amp; 5th Prize — Group Song, South Zone (38th &amp; 39th editions)</p>
+        </div>
+        <div class="ach-card">
+          <div class="ach-icon">💡</div>
+          <h3>Ideathon '24</h3>
+          <p>Technical team member — Anokha Tech Fest, Amrita Vishwa Vidyapeetham</p>
         </div>
       </div>
-
-      <!-- Right: Message form -->
-      <form class="card form" onsubmit="return handleContact(event)">
-        <h3>Send a message</h3>
-
-        <label>
-          Name
-          <input required name="name" placeholder="Your name" />
-        </label>
-
-        <label>
-          Email
-          <input required type="email" name="email" placeholder="your@email.com" />
-        </label>
-
-        <label>
-          Message
-          <textarea required name="message" rows="5" placeholder="Tell me about the opportunity..."></textarea>
-        </label>
-
-        <button class="btn" type="submit">Send</button>
-      </form>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Contact Section -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-tag">Let's Connect</div>
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>I'm always open to discussing research collaborations, internship opportunities, or just a good AI conversation.</p>
+          <div class="contact-links">
+            <a href="mailto:rishabpnambiar@gmail.com" class="contact-item">
+              <span class="contact-icon">📧</span>
+              <div><strong>Email</strong><span>rishabpnambiar@gmail.com</span></div>
+            </a>
+            <a href="tel:+918848862626" class="contact-item">
+              <span class="contact-icon">📱</span>
+              <div><strong>Phone</strong><span>+91 8848862626</span></div>
+            </a>
+            <a href="https://github.com/RPNambiar-24" target="_blank" class="contact-item">
+              <span class="contact-icon">🐙</span>
+              <div><strong>GitHub</strong><span>RPNambiar-24</span></div>
+            </a>
+            <a href="https://linkedin.com/in/rishab-p-nambiar" target="_blank" class="contact-item">
+              <span class="contact-icon">💼</span>
+              <div><strong>LinkedIn</strong><span>rishab-p-nambiar</span></div>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="name" placeholder="Your Name" required/>
+            <label for="name">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder="Your Email" required/>
+            <label for="email">Your Email</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+            <label for="message">Your Message</label>
+          </div>
+          <button type="submit" class="btn-primary full-width">Send Message ✉️</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
+  <!-- Footer -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <span class="muted">© <span id="year"></span> Rishab Premod Nambiar</span>
-      <a href="#top">Back to top ↑</a>
+    <div class="container">
+      <p>Designed &amp; Built by <strong>Rishab P Nambiar</strong> &copy; 2025</p>
+      <p class="footer-sub">Made with curiosity, caffeine, and PyTorch 🔥</p>
     </div>
   </footer>
 
-  <script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
