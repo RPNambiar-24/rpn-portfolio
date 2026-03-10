@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Rishab Nambiar | AI Engineer</title>
 
 <link rel="icon" href="assets/favicon.png">
 <link rel="stylesheet" href="style.css">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- particles -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
 </head>
 
 <body>
 
-<div class="background"></div>
+<div id="particles"></div>
 
 <nav>
+
 <h2 class="logo">Rishab<span>AI</span></h2>
 
 <ul>
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
 </ul>
-</nav>
 
+<button id="themeToggle">🌙</button>
+
+</nav>
 
 <section id="home">
 
@@ -33,94 +40,91 @@
 
 <img src="assets/profile.jpg" class="profile">
 
-<h1>Hi, I'm <span>Rishab</span></h1>
+<h1>Hi I'm <span>Rishab</span></h1>
 
 <h2 class="typing"></h2>
 
-<p>
-Machine Learning Engineer | Data Scientist | AI Researcher
-</p>
+<p>Machine Learning Engineer | Data Scientist</p>
 
-<div class="buttons">
-
-<a href="assets/resume.pdf" target="_blank" class="btn">
+<a class="btn" href="assets/resume.pdf" target="_blank">
 Download Resume
 </a>
 
-<a href="#projects" class="btn2">
-View Projects
-</a>
-
-</div>
-
 </div>
 
 </section>
 
-
 <section id="about">
 
-<h2 class="section-title">About Me</h2>
+<h2 class="title">About Me</h2>
 
-<p class="about-text">
+<p class="about">
 
-I'm a Machine Learning Engineer and Data Science student specializing in
-Computer Vision, NLP, Reinforcement Learning and Multimodal AI systems.
+AI engineer focused on building real-world ML systems across
+Computer Vision, NLP, Reinforcement Learning and Multimodal AI.
 
-I love building intelligent systems that solve real-world problems —
-from malware detection to AI interview platforms and reinforcement learning simulations.
+I enjoy building intelligent products like malware detection systems,
+AI interview platforms and RL simulations.
 
 </p>
 
 </section>
 
+<section id="skills">
+
+<h2 class="title">Skills</h2>
+
+<div class="skill">
+
+<p>Python / ML</p>
+<div class="bar"><span style="width:95%"></span></div>
+
+<p>Deep Learning</p>
+<div class="bar"><span style="width:90%"></span></div>
+
+<p>NLP</p>
+<div class="bar"><span style="width:85%"></span></div>
+
+<p>Computer Vision</p>
+<div class="bar"><span style="width:88%"></span></div>
+
+<p>Data Science</p>
+<div class="bar"><span style="width:92%"></span></div>
+
+</div>
+
+</section>
 
 
 <section id="projects">
 
-<h2 class="section-title">Projects</h2>
+<h2 class="title">Projects</h2>
 
-<div class="project-grid">
+<div class="projects">
 
 <div class="card">
 <h3>MultiMalNet</h3>
-<p>Multimodal Malware Classification using CNN + GNN fusion architecture.</p>
+<p>Multimodal malware classification using CNN + GNN fusion.</p>
 </div>
 
 <div class="card">
 <h3>DetectAI</h3>
-<p>Hybrid NLP system detecting AI generated text using RoBERTa and BiLSTM.</p>
+<p>AI generated text detection using RoBERTa.</p>
 </div>
 
 <div class="card">
-<h3>Traffic Signal RL</h3>
-<p>Deep Q Learning agent controlling traffic signals with PyGame simulation.</p>
+<h3>RL Traffic Control</h3>
+<p>Deep Q Network optimizing traffic lights.</p>
 </div>
 
 <div class="card">
 <h3>MockViewAI</h3>
-<p>AI powered mock interview platform using LLM pipelines.</p>
+<p>AI mock interview platform with LLMs.</p>
 </div>
 
 </div>
 
 </section>
-
-
-<section id="contact">
-
-<h2 class="section-title">Contact</h2>
-
-<p>Email: rishabpnambiar@gmail.com</p>
-
-<p>
-<a href="https://github.com/RPNambiar-24">GitHub</a> |
-<a href="https://linkedin.com/in/rishab-p-nambiar">LinkedIn</a>
-</p>
-
-</section>
-
-
 
 <footer>
 
