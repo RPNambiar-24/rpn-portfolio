@@ -420,3 +420,28 @@ body {
   .ring2 { width:310px; height:310px; }
   .projects-grid { grid-template-columns:1fr; }
 }
+
+/* ===== Experience ===== */
+.exp-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 16px; padding: 2rem; transition: border-color 0.3s, transform 0.3s;
+}
+.exp-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+.exp-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+.exp-head h3 { font-size: 1.25rem; color: var(--text); margin-bottom: 0.3rem; }
+.exp-org { color: var(--accent3); font-size: 0.92rem; font-family: var(--mono); }
+.exp-date {
+  font-family: var(--mono); font-size: 0.8rem; color: var(--accent);
+  border: 1px solid var(--border); border-radius: 999px; padding: 0.3rem 0.9rem; white-space: nowrap;
+}
+.exp-list { list-style: none; margin-bottom: 1.2rem; }
+.exp-list li { position: relative; padding-left: 1.4rem; color: var(--text2); line-height: 1.7; margin-bottom: 0.6rem; font-size: 0.95rem; }
+.exp-list li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
+.exp-list strong { color: var(--text); }
+
+/* ===== Project code links ===== */
+.project-link {
+  display: inline-block; margin-top: 1rem; font-family: var(--mono); font-size: 0.8rem;
+  color: var(--accent3); text-decoration: none; border-bottom: 1px dashed transparent; transition: border-color 0.2s;
+}
+.project-link:hover { border-bottom-color: var(--accent3); }

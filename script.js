@@ -41,7 +41,7 @@ function animateOutline() {
 }
 animateOutline();
 
-document.querySelectorAll("a, button, .project-card, .skill-category, .ach-card, .contact-item").forEach(el => {
+document.querySelectorAll("a, button, .project-card, .skill-category, .ach-card, .contact-item, .exp-card").forEach(el => {
   el.addEventListener("mouseenter", () => {
     outline.style.width = "56px";
     outline.style.height = "56px";
@@ -90,12 +90,11 @@ navLinks.querySelectorAll(".nav-link").forEach(l => {
 
 // Typewriter
 const words = [
-  "end-to-end AI systems.",
-  "Computer Vision models.",
-  "NLP pipelines.",
-  "RL agents.",
-  "Explainable AI.",
-  "GAN architectures.",
+  "LLM applications.",
+  "multi-agent systems.",
+  "secure RAG pipelines.",
+  "FastAPI services on GCP.",
+  "edge-ready ML models.",
   "published research."
 ];
 let wordIdx = 0, charIdx = 0, deleting = false;
@@ -127,7 +126,7 @@ function typeLoop() {
 typeLoop();
 
 // Scroll Reveal
-const revealEls = document.querySelectorAll(".section, .project-card, .skill-category, .ach-card, .stat-card, .timeline-item, .contact-item");
+const revealEls = document.querySelectorAll(".section, .project-card, .skill-category, .ach-card, .stat-card, .timeline-item, .contact-item, .exp-card");
 revealEls.forEach(el => el.classList.add("reveal"));
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
